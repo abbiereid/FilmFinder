@@ -1,8 +1,11 @@
 {
   "name": "filmfinder",
-  "private": true,
+  "private": false,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://abbiereid.github.io/FilmFinder",
+  "description": "A film recommendation app that uses the TMDB API to fetch and display movie data.",
+  "author": "Abbie Reid",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
