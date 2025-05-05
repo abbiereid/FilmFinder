@@ -1,3 +1,37 @@
 .SearchBar {
-    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+
+.SearchBar input {
+    background-color: transparent;
+    color: var(--text-colour);
+    border: 1px solid var(--text-colour);
+    border-radius: 5px 0 0 5px;
+    border-right: 0;
+    padding: 1rem;
+    width: 10rem;
+    transition: 0.3s ease-in-out;
+}
+
+.SearchBar input:focus {
+    width: 30rem;
+    outline: none;
+}
+
+.SearchBar button {
+    background-color: transparent;
+    border: 1px solid var(--text-colour);
+    border-radius: 0 5px 5px 0;
+    color: var(--text-colour);
+    padding: 1rem;
+    transition: 0.3s ease-in-out;
+}
+
+.SearchBar button:hover {
+    background-color: var(--text-colour);
+    opacity: 0.8;
+    color: var(--background-colour);
 }

@@ -3,6 +3,7 @@ import extendedLogo from "../assets/extendedLogo.svg";
 import "../styles/NavBar.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import SearchBar from './SearchBar.jsx'
 
 
 const NavBar = () => {
@@ -14,10 +15,10 @@ const NavBar = () => {
                         <img className="logo clickable" src={extendedLogo} alt="Logo" />
                     </a>
                 </li>
+                <SearchBar />
                 <li className="nav-item clickable"><a href="/"><FontAwesomeIcon icon={faUser} /></a></li>
                 <li className="nav-item clickable"><a href="/">Series</a></li>
                 <li className="nav-item clickable"><a href="/">Movies</a></li>
-                {/* <li className="nav-item clickable"><a href="/"><FontAwesomeIcon icon={faMagnifyingGlass} /></a></li> */}
             </ul>
         </nav>
     );

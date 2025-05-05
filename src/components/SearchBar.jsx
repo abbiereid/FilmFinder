@@ -8,7 +8,7 @@ const SearchBar = () => {
         <div className="SearchBar">
             <form className="search-form">
                 <input type="text" placeholder="Search..." className="search-input" />
-                <button type="submit" className="search-button">
+                <button type="submit" className="search-button clickable">
                     <FontAwesomeIcon icon={faMagnifyingGlass} />
                 </button>
             </form>
