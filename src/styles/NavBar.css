@@ -4,6 +4,7 @@
     justify-content: space-between;
     position: relative;
     padding: 0 2rem;
+    border-bottom: 1px solid var(--text-colour);
 }
 
 ul {
