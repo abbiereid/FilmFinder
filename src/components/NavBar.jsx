@@ -15,10 +15,10 @@ const NavBar = () => {
                         <img className="logo clickable" src={extendedLogo} alt="Logo" />
                     </a>
                 </li>
-                <SearchBar />
-                <li className="nav-item clickable"><a href="/"><FontAwesomeIcon icon={faUser} /></a></li>
-                <li className="nav-item clickable"><a href="/">Series</a></li>
+                <li><SearchBar /></li>
                 <li className="nav-item clickable"><a href="/">Movies</a></li>
+                <li className="nav-item clickable"><a href="/">Series</a></li>
+                <li className="nav-item clickable"><a href="/"><FontAwesomeIcon icon={faUser} /></a></li>
             </ul>
         </nav>
     );
