@@ -2,13 +2,13 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import "../styles/SearchBar.css";
-import { fetchData } from '../js/search.js';
+import { fetchData } from '../js/services/search.js';
 
-const SearchBar = () => {
+const SearchBar = ({ setSearchResults }) => {
     const [input, setInput] = useState("");
 
     const handleSubmit = async (value) => {
-        await fetchData(value);
+        setSearchResults(await fetchData(value));
         setInput("");
     };
 

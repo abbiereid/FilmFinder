@@ -1,3 +1,5 @@
+import Movie from '../movie.js';
+
 const options = {
     method: 'GET',
     headers: {
@@ -8,24 +10,31 @@ const options = {
 
 async function searchTMDB(query) {
     const url = `https://api.themoviedb.org/3/search/movie?query=${query}&include_adult=false&language=en-US&page=1`;
-
+    
     try {
-        await fetch(url, options)
-            .then(response => response.json())
-            .then(data => {
-                console.log(data);
-            });
-        }
-    catch (error) {
+        const response = await fetch(url, options);
+        const data = await response.json();
+
+        return data.results.map(movie => new Movie(
+            movie.id,
+            movie.title,
+            movie.poster_path ? `https://image.tmdb.org/t/p/w500${movie.poster_path}` : 'https://via.placeholder.com/500',
+            movie.release_date || 'Unknown',
+            movie.genre_ids.join(', '),
+            movie.director || 'Unknown',
+            movie.actors || 'Unknown',
+            movie.vote_average || 'No rating'
+        ));
+        
+    } catch (error) {
         console.error('Error fetching data from TMDB:', error);
     }
 }
 
 export async function fetchData(query) {
     if (!query) {
-        console.log("No query provided");
-        return;
+        return [];
     } else {
-        await searchTMDB(query);
+        return await searchTMDB(query);
     }
 }
